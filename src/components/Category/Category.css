@@ -1,0 +1,29 @@
+.category{
+    display: flex !important;
+    gap: 100px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+.fordisplay{
+    display: flex;
+}
+.category img{
+    width: 70%;
+    height: 400px;
+}
+.category_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.category h1 {
+    font-size: 50px;
+    font-weight: 100;
+    margin: 0;
+}
+.slick-next::before { 
+    color: red;
+}
+.slick-next{
+    display: none !important;
+}

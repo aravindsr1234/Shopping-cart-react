@@ -1,0 +1,117 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding-top: 10px;
+}
+
+.outer-layout {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+}
+
+.header_category {
+    display: flex;
+    gap: 20px;
+}
+
+.header_actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1417px;
+    margin: 0 auto;
+}
+
+.header_logo a h3 {
+    font-size: 27px;
+    margin: 0;
+}
+
+.header_category a h4 {
+    font-size: 14px;
+    color: #282c3f;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.header_search {
+    flex: 1;
+}
+
+.header_search_icon {
+    padding: 13px;
+    border: none;
+    background-color: #f5f5f6;
+    border-radius: 5px 0 0 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.search {
+    padding: 13px 0;
+    background-color: #f5f5f6;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    width: 80%;
+}
+
+.header_profile::before {
+    content: "\f007";
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #282c3f;
+    display: block;
+    text-align: center;
+}
+
+h6 {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.header_wishlist::before {
+    content: "\f004";
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #282c3f;
+    display: block;
+    text-align: center;
+}
+
+.header_bag::before {
+    content: "\f07a";
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #282c3f;
+    display: block;
+    text-align: center;
+}
+
+.hover_effect:hover {
+    content: "";
+    display: block;
+    color: red;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.CartButton {
+    background: transparent;
+    border: none;
+    margin: 5px 0;
+    font-size: 13px;
+}

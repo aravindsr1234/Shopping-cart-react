@@ -1,0 +1,129 @@
+.landing_container {
+    height: 100vh;
+    text-align: center;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* body {
+    background-color: #093545;
+    margin: 0;
+    height: 100vh;
+} */
+
+.login {
+    background-color: #093545;
+}
+
+.landing_style {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.landing_style button {
+    padding: 15px 45px;
+    background-color: #224957;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #20DF7F;
+}
+
+.landing_style a button {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500px;
+}
+
+.LoginUser input {
+    width: 250px;
+    height: 15px;
+    padding: 12px 135px 12px 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background: #224957;
+    border: none;
+    color: white;
+    margin-right: 20px;
+}
+
+.register {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.register .btn-block {
+    border-radius: 10px;
+    color: white;
+    background-color: #20DF7F;
+    border: none;
+    padding: 10px 15px;
+    width: 395px;
+    height: 45px;
+    font-size: 20px;
+}
+
+/* h3{
+    color: white;
+    font-size: 20px; 
+} */
+.backReg {
+    color: white;
+    text-decoration: none;
+    background-color: red;
+    padding: 8px;
+    border-radius: 10px;
+    border-radius: 19px 1px;
+}
+
+.loginLDiv {
+    display: flex;
+    flex-direction: column;
+    height: 91vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signUpBtn {
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.loginDiv {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginHead h1 {
+    font-size: 64px;
+    margin: 0;
+    font-weight: 400;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#loginPassword::placeholder {
+    color: white;
+    font-size: 14px;
+}
+
+#loginEmail::placeholder {
+    color: white;
+    font-size: 14px;
+}
+
+.gotoRegister a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}

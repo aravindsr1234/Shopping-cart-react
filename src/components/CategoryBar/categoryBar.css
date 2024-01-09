@@ -1,0 +1,23 @@
+.categoryBar {
+    margin-top: 50px; 
+}
+.categoryRow{
+    margin-bottom: 20px;
+}
+
+.product-flux{
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 a{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+h1{
+    font-weight: 500;
+    font-size: 30px;
+    margin: 0;
+}
+
