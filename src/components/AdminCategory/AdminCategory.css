@@ -1,0 +1,66 @@
+.cate {
+    display: flex;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.admin_container {
+    max-width: 1416px;
+    margin: 0 auto;
+}
+
+.admin_category_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.add_category {
+    position: absolute;
+    left: 35%;
+    top: 43%;
+}
+
+form {
+    padding: 100px;
+    background-color: #b0e4ec;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 0 0 20px 0;
+    padding: 10px;
+}
+
+.categoryAddBtn {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.editData {
+    width: 100px;
+}
+
+.admin_content_container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.admin_content_img {
+    width: 100px;
+}
+
+.content_img_name {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.content_img_name img{
+    border-radius: 30px;
+}

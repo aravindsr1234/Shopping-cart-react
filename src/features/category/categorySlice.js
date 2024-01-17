@@ -7,10 +7,20 @@ export const getCategory = createAsyncThunk(
     'category/getCategory',
     async () => {
         const response = await axios.get(category_URL);
-        console.log(response);
+        // console.log(response);
         return response.data;
     },
 );
+
+export const createCategory = createAsyncThunk(
+    'createCategory',
+    async (data) => {
+        console.log("data from createCategory", data);
+        const response = await axios.get(category_URL, data);
+        console.log(response);
+        return response.data;
+    }
+)
 
 const initialState = {
     getCategoryData: [],
@@ -32,6 +42,18 @@ const categorySlice = createSlice({
                 state.getCategoryData = action.payload;
             })
             .addCase(getCategory.rejected, (state, action) => {
+                state.status = "failed";
+                state.error = action.error.message;
+            })
+
+            .addCase(createCategory.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(createCategory.fulfilled, (state, action) => {
+                state.status = "success";
+                state.getCategoryData = action.payload;
+            })
+            .addCase(createCategory.rejected, (state, action) => {
                 state.status = "failed";
                 state.error = action.error.message;
             })

@@ -17,7 +17,7 @@ export const getCart = createAsyncThunk(
         }
         const res = await axios.get(`http://localhost:4000/cart/cartById/?id=${id}`);
         return res.data;
-    },
+    },      
 );
 
 export const cart = createAsyncThunk(

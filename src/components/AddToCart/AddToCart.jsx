@@ -10,6 +10,7 @@ const AddToCart = () => {
     const [cartBtn, setCartBtn] = useState(true);
     const [data, setData] = useState([]);
     const [userIdCart, setUserIdCart] = useState('');
+    console.log("userIDCart", userIdCart);
     const [cartDataStore, setCartDataStore] = useState([]);
     const [cartDatas, setCartDatas] = useState({
         userId: '',
@@ -17,10 +18,12 @@ const AddToCart = () => {
     });
     const productId = useSelector((state) => state.product.productById._id);
     const userId = JSON.parse(localStorage.getItem('userId'));
+    console.log("userId",userId);
     const products = useSelector((state) => state.cart.getCarts);
     const carts = useSelector((state) => state.cart);
 
     useEffect(() => {
+        setUserIdCart(userId);
         dispatch(getCart(userId));
         if (!userId) {
         }

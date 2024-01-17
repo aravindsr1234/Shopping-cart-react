@@ -1,0 +1,9 @@
+.admin_panel button{
+    padding: 20px;
+    margin-left: 10px;
+    border: 1px solid black;
+}
+
+.admin_panel {
+    padding-top: 20px;
+}
