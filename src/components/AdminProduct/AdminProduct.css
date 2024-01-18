@@ -1,0 +1,10 @@
+.admin_product_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.admin_product_container {
+    max-width: 1417px; 
+    margin: 0 auto;
+}

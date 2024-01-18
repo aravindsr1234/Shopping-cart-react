@@ -10,20 +10,39 @@ const AddCategoryBtn = ({ data, reset }) => {
         categoryName: '',
         image: '',
     })
-    // console.log(postData);
+    const [file, setFile] = useState(null);
+    console.log(postData);
+    console.log(file);
+
     const handleChange = (e) => {
         const value = e.target.value;
         const inputName = e.target.name;
         setPostData({ ...postData, [inputName]: value });
     };
+
+    const HandleImageChange = (e) => {
+        console.log(e.target.files[0]);
+        const selectedFile = e.target.files[0];
+        console.log(e.target.files[0]);
+        setFile(selectedFile);
+        // if (selectedFile) {
+        //   setImagePreview(URL.createObjectURL(selectedFile));
+        // } else {
+        //   setImagePreview(" ");
+        // }
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const result = await axios.post('http://localhost:4000', postData);
+        let formData = new FormData();
+        formData.append('categoryName', postData.categoryName);
+        formData.append('image', file);
+        const result = await axios.post('http://localhost:4000', formData);
         // dispatch(createCategory(postData));
-        console.log(result);
     }
+
     const btnSet = () => {
-        reset(true);        
+        reset(true);
     }
 
     const closeBtnSet = () => {
@@ -36,14 +55,14 @@ const AddCategoryBtn = ({ data, reset }) => {
                 {data ?
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="categoryName">Category Name:</label>
-                        <input type="text" name="categoryName" value={postData.categoryName} onChange={handleChange} placeholder="Category Name"/>                        
+                        <input type="text" name="categoryName" value={postData.categoryName} onChange={handleChange} placeholder="Category Name" />
                         <label htmlFor="categoryName">Category Image:</label>
-                        <input type="file" name="image" value={postData.image} onChange={handleChange} />
+                        <input type="file" name="image" onChange={HandleImageChange} />
                         <button type="submit" className="categoryAddBtn">create</button>
                         <button type="button" onClick={closeBtnSet}>Cancel</button>
                     </form> :
                     null
-                    }
+                }
             </div>
         </>
     );

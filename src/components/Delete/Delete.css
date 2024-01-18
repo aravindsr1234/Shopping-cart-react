@@ -1,0 +1,22 @@
+.delete_modal {
+    background-color: #fc3c3c;
+    color: white;
+    padding: 40px 80px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    left: 36%;
+    top: 36%;
+}
+
+.delete_modal button{
+    margin-left: 20px;
+    padding: 5px 20px;
+}
+
+/* .outley {
+    height: 100vh;
+    width: 100vh;
+    opacity: 2px;
+    background-color: black;
+} */

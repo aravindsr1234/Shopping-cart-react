@@ -1,0 +1,14 @@
+.admin_product_form {
+    padding: 50px;
+    position: absolute;
+    left: 36%;
+    right: 36%;
+}
+
+.edit_product_form{
+    padding: 20px;
+}
+
+.edit_product_form button{
+    margin-bottom: 10px;
+}
