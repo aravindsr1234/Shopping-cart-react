@@ -15,6 +15,8 @@ import AdminSignUp from "../components/AdminSignUp/AdminSignUp";
 import AdminPanel from "../components/AdminPanel/AdminPanel";
 import AdminCategory from "../components/AdminCategory/AdminCategory";
 import AdminProduct from "../components/AdminProduct/AdminProduct";
+import Order from "../components/Order/Order";
+import AllUsers from "../components/AllUsers/AllUsers";
 import AdminCategoryProduct from "../components/AdminCategoryProduct/AdminCategoryProduct";
 
 const MainLayout = () => {
@@ -35,6 +37,8 @@ const MainLayout = () => {
                     <Route path="/adminCategory" element={<AdminCategory />} />
                     <Route path="/adminProduct/:id" element={<AdminProduct />} />
                     <Route path="/adminCategoryProduct/:id" element={<AdminCategoryProduct />} />
+                    <Route path="/order" element={<Order />} />
+                    <Route path="/users" element={<AllUsers />} />
                     <Route path="/" element={<>
                         <Category />
                         <CategoryBar />

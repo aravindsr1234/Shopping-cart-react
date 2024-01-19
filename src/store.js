@@ -6,6 +6,7 @@ import addToCartSlice from "./features/addToCart/addToCartSlice";
 import signupUserSlice from "./features/signupUserSlice/signupUserSlice";
 import categoryRowSlice from "./features/categoryRowSlice/categoryRowSlice";
 import signupAdminSlice from "./features/signupAdminSlice/signupAdminSlice";
+import order from "./features/order/orderSlice";
 
 const store = configureStore({
     reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
         cart: addToCartSlice,
         payment: paymentSlice,
         admin: signupAdminSlice,
+        order: order,
     },
 });
 

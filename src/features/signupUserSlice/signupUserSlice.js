@@ -10,8 +10,17 @@ export const createUser = createAsyncThunk(
     },
 );
 
+export const getAllUsers = createAsyncThunk(
+    'getUser',
+    async () => {
+        const response = await axios.get(`http://localhost:4000/user`);
+        return response.data;
+    }
+)
+
 const initialState = {
     user: [],
+    getAllUser: [],
     status: 'idle',
 };
 
@@ -29,6 +38,17 @@ const userSlice = createSlice({
                 state.user = action.payload;
             })
             .addCase(createUser.rejected, (state) => {
+                state.status = "failed";
+            })
+
+            .addCase(getAllUsers.pending, (state) => {
+                state.status = "loading";
+            })
+            .addCase(getAllUsers.fulfilled, (state, action) => {
+                state.status = "success";
+                state.getAllUser = action.payload;
+            })
+            .addCase(getAllUsers.rejected, (state) => {
                 state.status = "failed";
             })
     },

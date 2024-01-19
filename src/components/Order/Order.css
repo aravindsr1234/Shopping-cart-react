@@ -1,0 +1,14 @@
+table, th, td {
+    border: 1px solid black;
+  }
+
+  td {
+    padding: 10px 20px;
+  }
+
+  .order_table {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

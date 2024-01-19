@@ -70,7 +70,7 @@ const AdminProductEdit = ({ id, data }) => {
                     <label htmlFor="">Category:</label>
                     <select name="category" id="" onChange={handleChange}>
                         {categoryData.map((data, index) => (
-                            <option  value={editData.category}>{data.categoryName}</option>
+                            <option  value={editData.categoryId}>{data.categoryName}</option>
                         ))}
                     </select>
                     <label htmlFor="">Price:</label>
