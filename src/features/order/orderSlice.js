@@ -8,7 +8,16 @@ export const getOrder = createAsyncThunk(
         console.log('response', response);
         return response.data;
     }
-)
+);
+
+export const getOrderById = createAsyncThunk(
+    'orderById',
+    async (id) => {
+        const response = await axios.get(`http://localhost:4000/order/?id=${id}`);
+        console.log('response', response);
+        return response.data;
+    }
+);
 
 const initialState = {
     orderData: [],
@@ -29,6 +38,17 @@ const orderSlice = createSlice({
                 state.orderData = action.payload;
             })
             .addCase(getOrder.rejected, (state) => {
+                state.status = "failed";
+            })
+
+            .addCase(getOrderById.pending, (state) => {
+                state.status = "loading";
+            })
+            .addCase(getOrderById.fulfilled, (state, action) => {
+                state.status = "success";
+                state.orderData = action.payload;
+            })
+            .addCase(getOrderById.rejected, (state) => {
                 state.status = "failed";
             })
     }

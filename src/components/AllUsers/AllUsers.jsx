@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from "../../features/signupUserSlice/signupUserSlice";
+import './AllUsers.css'
 
 const AllUsers = () => {
 
@@ -15,28 +16,30 @@ const AllUsers = () => {
 
     return (
         <>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Month</th>
-                        <th>Savings</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>January</td>
-                        <td>$100</td>
-                    </tr>
-                </tbody>
-            </table>
-            {userData.map((data) => (
-                <>
-                    <h1>{data.firstName + " " + data.lastName}</h1>
-                    <h1>{data.firstName}</h1>
-                    <h1>{data.firstName}</h1>
-                </>
-            ))}
+            <div className="users">
+                <table >
+                    <thead>
+                        <tr>
+                            <th>SL.NO</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {userData.map((data, index) => (
+                            <>
+                                <tr key={index}>
+                                    <td>{index + 1}</td>
+                                    <td>{data.firstName + " " + data.lastName}</td>
+                                    <td>{data.email}</td>
+                                    <td>{data.address}</td>
+                                </tr>
+                            </>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </>
     );
 };

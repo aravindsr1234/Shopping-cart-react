@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getOrder } from "../../features/order/orderSlice";
 import { useDispatch, useSelector } from "react-redux";
 import OrderProductBtn from "../OrderProductBtn/OrderProductBtn";
+import { format } from 'date-fns';
 import './Order.css';
 
 const Order = () => {
@@ -29,7 +30,7 @@ const Order = () => {
                             <tr>
                                 <th>OrderId</th>
                                 {/* <th>email</th> */}
-                                <th>orderDate</th>
+                                <th>UserName</th>
                                 <th>status</th>
                                 <th>Order button</th>
                             </tr>
@@ -39,9 +40,9 @@ const Order = () => {
                                 <tr>
                                     <td>{data._id}</td>
                                     {/* <td>{data.email}</td> */}
-                                    <td>{data.orderDate}</td>
+                                    <td>{data.userName}</td>
                                     <td>{data.status}</td>
-                                    <td><OrderProductBtn data={data.cartData}/></td>
+                                    <td><OrderProductBtn data={data.cartData} /></td>
                                 </tr>
                             ))}
                         </tbody>

@@ -1,6 +1,6 @@
 import './AdminProduct.css';
 import AddProductBtn from "../AddProductBtn/AddProductBtn";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getCategoryRow } from '../../features/categoryRowSlice/categoryRowSlice';
@@ -12,6 +12,7 @@ const AdminProduct = () => {
     const { id } = useParams();
     let categoryId = id;
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(getCategoryRow(id));
@@ -21,6 +22,10 @@ const AdminProduct = () => {
     console.log(product);
 
     const filterData = product.filter((filter) => (filter.categoryId === categoryId));
+
+    const productById = async (id) => {
+        navigate(`/adminProductById/${id}`);
+    }
 
     return (
         <>
@@ -33,14 +38,16 @@ const AdminProduct = () => {
                     {Array.isArray(filterData) ? (
                         filterData.map((product, index) => (
                             <div className="products" key={index} >
-                                <img src={product.images[0]} alt="" />
-                                <div className="product_content">
-                                    <h1>{product.productName}</h1>
-                                    <h2>13th Gen Laptops</h2>
-                                    <h3>Rs:{product.price}</h3>
+                                <div onClick={() => productById(product._id)}>
+                                    <img src={product.images[0]} alt="" />
+                                    <div className="product_content">
+                                        <h1>{product.productName}</h1>
+                                        <h2>13th Gen Laptops</h2>
+                                        <h3>Rs:{product.price}</h3>
+                                    </div>
                                 </div>
-                                <AdminProductEdit id={product._id} data={product}/>
-                                <ProductDelete id={product._id}/>
+                                <AdminProductEdit id={product._id} data={product} />
+                                <ProductDelete id={product._id} />
                             </div>
                         ))
                     ) : (

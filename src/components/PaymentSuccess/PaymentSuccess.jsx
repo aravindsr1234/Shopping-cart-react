@@ -9,9 +9,7 @@ const PaymentSuccess = () => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get('id');
-    console.log(id);
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
 
     const paymentData = useSelector((state) => state.payment.paymentDetails);
@@ -19,12 +17,16 @@ const PaymentSuccess = () => {
     if (paymentData.status === 'complete') {
         const editOrderStatus = axios.put(`http://localhost:4000/order/?id=${id}`, { status: status });
         console.log("after edit data in order collection", editOrderStatus);
-
-    }
+    };
 
     useEffect(() => {
         dispatch(paymentDetails(id));
     }, [id]);
+
+    const orderEdit = (id) => {
+        console.log(id);
+        navigate(`/orderSummary/${id}`)
+    };
 
     return (
         <>
@@ -34,7 +36,7 @@ const PaymentSuccess = () => {
                 </div>
                 <h1 className="paymentHead">Payment Successful</h1>
                 <h3>Payment Status: {paymentData.payment_status}</h3>
-                <button onClick={() => navigate('/')}>Done</button>
+                <button onClick={() => orderEdit(id)}>Done</button>
             </div>
         </>
     );

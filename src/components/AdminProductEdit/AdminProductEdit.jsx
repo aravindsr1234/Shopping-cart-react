@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import './AdminProductEdit.css'
 
 const AdminProductEdit = ({ id, data }) => {
 
