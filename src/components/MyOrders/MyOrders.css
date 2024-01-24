@@ -1,0 +1,16 @@
+.myOrder-image {
+    width: 100px;
+}
+
+.myorder-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    border: 3px solid black;
+    padding: 20px;
+}
+
+.myorder-data {
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+}

@@ -19,6 +19,16 @@ export const getOrderById = createAsyncThunk(
     }
 );
 
+export const findById = createAsyncThunk(
+    'findById',
+    async (id) => {
+        console.log(id);
+        const response = await axios.get(`http://localhost:4000/order/orderById/?id=${id}`);
+        console.log('response', response);
+        return response.data;
+    }
+);
+
 const initialState = {
     orderData: [],
     status: 'idle',
@@ -49,6 +59,17 @@ const orderSlice = createSlice({
                 state.orderData = action.payload;
             })
             .addCase(getOrderById.rejected, (state) => {
+                state.status = "failed";
+            })
+
+            .addCase(findById.pending, (state) => {
+                state.status = "loading";
+            })
+            .addCase(findById.fulfilled, (state, action) => {
+                state.status = "success";
+                state.orderData = action.payload;
+            })
+            .addCase(findById.rejected, (state) => {
                 state.status = "failed";
             })
     }

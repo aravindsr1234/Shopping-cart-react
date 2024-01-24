@@ -20,6 +20,7 @@ import AllUsers from "../components/AllUsers/AllUsers";
 import AdminCategoryProduct from "../components/AdminCategoryProduct/AdminCategoryProduct";
 import OrderSummary from "../components/orderSummary/OrderSummary";
 import AdminProductById from "../components/AdminProductById/AdminProductById";
+import MyOrders from "../components/MyOrders/MyOrders";
 
 const MainLayout = () => {
     return (
@@ -44,6 +45,7 @@ const MainLayout = () => {
                     <Route path="/users" element={<AllUsers />} />
                     <Route path="/orderSummary/:id" element={<OrderSummary />} />
                     <Route path="/adminProductById/:id" element={<AdminProductById />} />
+                    <Route path="/myOrders" element={<MyOrders />} />
                     <Route path="/" element={<>
                         <Category />
                         <CategoryBar />
