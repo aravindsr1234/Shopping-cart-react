@@ -45,8 +45,8 @@ const MyOrders = () => {
                     {<h1>UserName : {data.userName}</h1>}
                     {<h1>status : {data.status}</h1>}
                     {<h1>TotalPrice : {data.totalPrice}</h1>}
-                    {<h1>BillingAddress : {data.billingAddress.line1 + " " + data.billingAddress.city + " " + data.billingAddress.country}</h1>}
-                    {<h1>ShippingAddress : {data.shippingAddress.line1 + " " + data.shippingAddress.city + " " + data.shippingAddress.country}</h1>}
+                    {<h1>BillingAddress : {data.billingAddress?.line1 + " " + data.billingAddress?.city + " " + data.billingAddress?.country}</h1>}
+                    {<h1>ShippingAddress : {data.shippingAddress?.line1 + " " + data.shippingAddress?.city + " " + data.shippingAddress?.country}</h1>}
                 </div>
             ))}
         </div>

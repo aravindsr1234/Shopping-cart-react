@@ -2,18 +2,21 @@ import { useEffect, useState } from "react";
 import { getOrder } from "../../features/order/orderSlice";
 import { useDispatch, useSelector } from "react-redux";
 import OrderProductBtn from "../OrderProductBtn/OrderProductBtn";
+import Search from "../Search/Search";
 import { format } from 'date-fns';
 import './Order.css';
 
 const Order = () => {
     const dispatch = useDispatch();
 
+    // const [data, setData] = useState([]);
     const [orderData, setOrderData] = useState([false]);
     console.log('orderData', orderData);
 
     const data = useSelector((state) => state.order.orderData);
-
+    
     useEffect(() => {
+        
         dispatch(getOrder());
     }, [dispatch]);
 
@@ -23,6 +26,7 @@ const Order = () => {
 
     return (
         <>
+            <Search />
             {orderData ?
                 <div className="order_table">
                     <table>

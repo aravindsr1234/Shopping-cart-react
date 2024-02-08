@@ -5,20 +5,10 @@ const DownloadOrderSummary = ({ data }) => {
 
   const downloadInvoice = async (datas) => {
 
-    //   const products = datas.cartData.map((data) => {
-    //     return [{
-    //       quantity: `${data.quantity}`,
-    //           description: `${data.description}`,
-    //           tax: 0,
-    //           price: `${data.price}`,
-    //     }]
-    // });
-    // console.log('products', products);
-
     const data = {
-      documentTitle: "INVOICE", //Defaults to INVOICE
+      documentTitle: "INVOICE",
       currency: "USD",
-      taxNotation: "vat", //or gst
+      taxNotation: "vat",
       marginTop: 25,
       marginRight: 25,
       marginLeft: 25,
@@ -41,14 +31,14 @@ const DownloadOrderSummary = ({ data }) => {
       invoiceNumber: `${datas._id}`,
       invoiceDate: `${new Date(Date.now()).toLocaleString("en-US")}`,
       products:
-        datas.cartData.map((data) => ([
+        datas.cartData.map((data) => (
           {
-            quantity: `${data.quantity}`,
-            description: `${data.totalPrice}`,
+            quantity: 1,
+            description: data.productName,
             tax: 0,
-            price: `${data.totalPrice}`,
+            price: datas.totalPrice,
           }
-        ]))
+        ))
       ,
       bottomNotice:
         "add message",

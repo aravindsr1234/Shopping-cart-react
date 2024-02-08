@@ -68,7 +68,7 @@ const Product = () => {
                     <h1 className="productPrice"><i class="fa-solid fa-indian-rupee-sign"></i>{productData.price} MRP <del>300</del></h1>
                     <div className="product_actions">
                         <AddToCart />
-                        <button className="productBuy">BUY NOW</button>
+                        {/* <button className="productBuy">BUY NOW</button> */}
                     </div>
                     <hr />
                 </div>

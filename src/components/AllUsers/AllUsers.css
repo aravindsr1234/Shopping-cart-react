@@ -3,8 +3,11 @@
     align-items: center;
     justify-content: center;
     padding-top: 30px;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .users table {
     width: 50%;
+    box-shadow: -1px 0px 23px -10px black;
 }

@@ -14,7 +14,6 @@ const AdminCategory = () => {
 
     const [categoryModal, setCategoryModal] = useState(false);
     const [editData, setEditData] = useState();
-    // const [editCategoryModal, setEditCategoryModal] = useState(false)
     console.log(editData);
 
     const categoryData = useSelector((state) => { return state.category.getCategoryData });
